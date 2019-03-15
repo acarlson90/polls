@@ -1,4 +1,4 @@
-package com.aaroncarlson.polls.audit;
+package com.aaroncarlson.polls.model.audit;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
