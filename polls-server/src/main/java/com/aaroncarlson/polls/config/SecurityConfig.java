@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * from the database, this is the service to manage that
      */
     @Autowired
-    CustomUserDetailsService customUserDetailsService;
+    private CustomUserDetailsService customUserDetailsService;
     /**
      * Used to return a 401 unauthorized error to clients that try to access a protected resource without
      * proper authentication. It implements Spring Security's AuthenticationEntryPoint interface
@@ -131,6 +131,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                             .permitAll()
                     .anyRequest()
                             .authenticated();
+
         // Add our custom JWT security filter
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
